@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Evernote app link
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  On a note page, insert app link to the note
 // @author       Chaim Leib Halbert
 // @match        https://www.evernote.com/shard/s*
@@ -26,10 +26,12 @@
     function _noteLink2noteObj(url) {
         url = url.toString();
         if (!url || !url.startsWith("https://")) {
+            console.error("error: expected https:// prefix");
             return null;
         }
         var parts = url.split("/", 9);
         if (parts.length < 8 || parts[3] != "shard" || parts[5] != "nl") {
+            console.error("error: url not of expected format");
             return null;
         }
         var result = {
@@ -74,7 +76,6 @@
     }
     var noteObj = noteLink2noteObj(window.location);
     var appLink = noteObj2appLink(noteObj);
-    console.log(appLink);
     var lb = linkButton(appLink);
     $(".sharing-imagegallery").prepend(lb);
 })();
