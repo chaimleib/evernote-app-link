@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Evernote app link
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/chaimleib/evernote-app-link/
 // @version      0.2
 // @description  On a note page, insert app link to the note
 // @author       Chaim Leib Halbert
 // @match        https://www.evernote.com/shard/s*
 // @grant        none
 // @require      https://code.jquery.com/jquery-latest.min.js
-// @updateURL   https://raw.githubusercontent.com/chaimleib/evernote-app-link/master/evernote-app-link.js
-// @downloadURL   https://raw.githubusercontent.com/chaimleib/evernote-app-link/master/evernote-app-link.js
+// @updateURL    https://raw.githubusercontent.com/chaimleib/evernote-app-link/master/evernote-app-link.js
+// @downloadURL  https://raw.githubusercontent.com/chaimleib/evernote-app-link/master/evernote-app-link.js
 // ==/UserScript==
 
 (function() {
